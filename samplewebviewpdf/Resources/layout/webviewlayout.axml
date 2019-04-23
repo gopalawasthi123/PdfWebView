@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <LinearLayout
+     android:orientation="vertical"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:visibility="visible"
+     android:id="@+id/LytForExternalUrl">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/relative">
+      <WebView
+          android:layout_width="match_parent"
+          android:layout_height="fill_parent"
+          android:layout_marginBottom="50dp"
+          android:id="@+id/webView1" />
+      <RelativeLayout
+          android:orientation="horizontal"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:layout_above="@id/webView1"
+          android:id="@+id/linearLayout2"
+          android:layout_alignParentBottom="true"
+          android:background="#F2EFEF">
+        <ImageView
+            android:src="@drawable/NavArrowLeft"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imgViewBack"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true" />
+        <ImageView
+            android:src="@drawable/NavArrowRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imgViewForward"
+            android:padding="5dp"
+            android:layout_marginLeft="50dp"
+            android:layout_centerVertical="true" />
+        <ImageView
+            android:src="@drawable/refresh_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imgRefresh"
+            android:padding="5dp"
+            android:layout_centerInParent="true" />
+        <TextView
+            android:text="Link"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txtGlobeIcon"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:textSize="25dp" />
+      </RelativeLayout>
+    </RelativeLayout>
+  </LinearLayout>
+</RelativeLayout>
