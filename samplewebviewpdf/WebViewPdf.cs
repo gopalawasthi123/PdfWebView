@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
@@ -21,6 +21,7 @@ namespace samplewebviewpdf
         LinearLayout linearLayout;
        public ImageView imgViewBack, imgViewForward, imgRefresh;
         TextView txtGlobeIcon;
+        string externalurl = "";
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -33,8 +34,9 @@ namespace samplewebviewpdf
             imgViewForward = FindViewById<ImageView>(Resource.Id.imgViewForward);
             imgRefresh = FindViewById<ImageView>(Resource.Id.imgRefresh);
             txtGlobeIcon = FindViewById<TextView>(Resource.Id.txtGlobeIcon);
-            string externalurl = "https://manage.meetappevent.com/Public/Pdf/GetPdf?url=https://meetappdev2.blob.core.windows.net/appl1/8516fa6c-1c73-46dc-9740-5444006ba958.pdf";
-            SetWebView(webView, externalurl);
+            // externalurl = "https://www.adobe.com/content/dam/acom/en/devnet/acrobat/pdfs/pdf_open_parameters.pdf";
+
+            //SetWebView(webView, externalurl);
 
             imgViewBack.Click += (sender, e) => {
                 if (webView.CanGoBack())
@@ -56,6 +58,14 @@ namespace samplewebviewpdf
             };
 
             imgRefresh.Click += (sender, e) => webView.Reload();
+
+        }
+        protected override void OnResume()
+        {
+            base.OnResume();
+             externalurl = "https://www.adobe.com/content/dam/acom/en/devnet/acrobat/pdfs/pdf_open_parameters.pdf";
+
+            SetWebView(webView, externalurl);
 
         }
         class MonkeyWebViewClient : WebViewClient
